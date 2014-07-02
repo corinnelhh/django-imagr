@@ -3,6 +3,10 @@ from django.contrib.auth.models import User
 
 
 class Photo(models.Model):
+
+    def __unicode__(self):
+        return self.title
+
     image = models.ImageField(upload_to='photos/%Y/%m/%d')
     title = models.CharField(max_length=50)
     owner = models.ForeignKey(User)
@@ -13,6 +17,10 @@ class Photo(models.Model):
 
 
 class Album(models.Model):
+
+    def __unicode__(self):
+        return self.title
+
     owner = models.ForeignKey(User)
     title = models.CharField(max_length=50)
     description = models.TextField()
@@ -25,6 +33,10 @@ class Album(models.Model):
 
 
 class Site_User(models.Model):
+
+    def __unicode__(self):
+        return self.user
+
     user = models.OneToOneField(User)
     following = models.ManyToManyField('self', related_name="follows", symmetrical=False)
     date_joined = models.DateTimeField('date joined')
