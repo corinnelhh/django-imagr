@@ -1,5 +1,5 @@
 """
-Django settings for mysite project.
+Django settings for imagr_site project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -26,6 +26,9 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MEDIA_ROOT = BASE_DIR + "/media"
+
+MEDIA_URL = "http://media.photos.com/"
 
 # Application definition
 
@@ -36,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'imagr_images',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -47,9 +51,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'imagr_site.urls'
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+WSGI_APPLICATION = 'imagr_site.wsgi.application'
 
 
 # Database
